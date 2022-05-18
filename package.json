@@ -1,0 +1,15 @@
+{
+  "name": "cripto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:AnthoniBortolotto/cripto-server.git",
+  "author": "DanielFBottega <daniel.bottega@unochapeco.edu.br>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
