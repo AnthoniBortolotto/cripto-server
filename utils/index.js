@@ -1,9 +1,8 @@
 const NodeRSA = require("node-rsa");
 
 async function getKeys() {
-  const key = new NodeRSA();
-  const keys = await key.generateKeyPair();
-  return [keys.exportKey('private'), keys.exportKey('public'), keys];
+  const key = new NodeRSA({ b: 1024 });
+  return [key.exportKey('private'), key.exportKey('public'), key];
 }
 
 module.exports = { getKeys: getKeys };
