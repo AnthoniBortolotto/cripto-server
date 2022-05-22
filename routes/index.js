@@ -4,19 +4,7 @@ const router = express.Router();
 const { getClientPublicKey, setPublicKey } = require("../utils/clientKey");
 const keys = require("../utils/ownKeys");
 
-router.post("/", async (req, res) => {
-  const key = await new NodeRSA();
-  if (getClientPublicKey() === null) {
-    console.log("deu ruim ta null");
-  } else {
-    await key.import(getClientPublicKey(), "public");
-    const msgEncrypt = await key.encrypt("Chave enviada rapa");
-    const msgReceived = req.body.msg;
-    const decryptMSG = await keys[2].decrypt(msgReceived).toString();
-    // const msgEncrypt = keys[2].encrypt('Chave enviada rapa')
-    res.send(msgEncrypt);
-  }
-});
+
 
 /* router.put("/", async (req, res) => {
     const chave = req.body.publicKey;
